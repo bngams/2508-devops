@@ -1,2 +1,4 @@
 node_modules
 .turbo
+npm-audit-report.html
+report.html
