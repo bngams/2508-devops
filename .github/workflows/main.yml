@@ -25,3 +25,7 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
+    - name: Aqua Security Trivy Install
+      uses: aquasecurity/setup-trivy@v0.2.3
+    - name: Run SAST
+      run: npm run audit:trivy
