@@ -29,3 +29,8 @@ jobs:
       uses: aquasecurity/setup-trivy@v0.2.3
     - name: Run SAST
       run: npm run audit:trivy
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v4
+      with:
+        name: sast-report
+        path: report.html
