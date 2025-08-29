@@ -65,10 +65,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v5.0.0
-      - name: Setup Node.js with cache
-        uses: ./.github/actions/setup-node
-        with:
-          restore-cache: 'true'
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
