@@ -58,3 +58,18 @@ jobs:
       with:
         name: sast-report
         path: report.html
+
+  sonarqube:
+    name: SonarQube
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5.0.0
+      - name: Setup Node.js with cache
+        uses: ./.github/actions/setup-node
+        with:
+          restore-cache: 'true'
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
