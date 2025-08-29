@@ -75,6 +75,9 @@ jobs:
     - name: Setup Ansible
       # Autre action plus legit?
       uses: alex-oleshkevich/setup-ansible@v1.0.1
+      with:
+        # The version of Ansible to install.
+        version: latest
     - name: Run Ansible
       run: ansible -i ops/ansible/inventory.yml ops/ansible/playbook.yml
       
