@@ -78,8 +78,8 @@ jobs:
       with:
         # The version of Ansible to install.
         version: "9.3.0"
-    - name: Check available keys
-      run: ls ~/.ssh
+    - name: Add srv to known hosts
+      run: ssh-keyscan -H 51.83.44.56 >> ~/.ssh/known_hosts # replace srv ip with env var...
     - name: Run Ansible
       run: ansible-playbook -i ops/ansible/inventory.yml ops/ansible/playbook.yml
       
