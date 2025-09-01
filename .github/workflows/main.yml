@@ -81,7 +81,7 @@ jobs:
     - name: Check available keys
       run: ls ~/.ssh
     - name: Run Ansible
-      run: ansible -i ops/ansible/inventory.yml ops/ansible/playbook.yml
+      run: ansible-playbook -i ops/ansible/inventory.yml ops/ansible/playbook.yml
       
 
   sonarqube:
